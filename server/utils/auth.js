@@ -19,7 +19,7 @@ module.exports = {
       return req;
     }
 
-    // verify token and get user data out of it
+    // verify token and grab user data from it
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
@@ -28,9 +28,6 @@ module.exports = {
     }
 
     return req;
-
-    // send to next endpoint
-    next();
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };

@@ -44,5 +44,11 @@ app.get('*', (req, res) => {
 });
 
 db.once('open', () => {
-    app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
+    app.listen(PORT, () => {
+        console.log(`🌍 The API endpoint is available on port:${PORT}`);
+        console.log(`GraphQL can be accessed at http://localhost:${PORT}${
+            server.graphqlPath
+        }`);
+
+    });
 });
