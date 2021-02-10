@@ -28,7 +28,7 @@ const resolvers = { // Define query to find user initiating query and return err
         },
 
         // Login user
-        loginUser: async (parent, {email, password}) => {
+        login: async (parent, {email, password}) => {
             const user = await User.findOne({email});
 
             // Validate user supplied by client actally exists and throw error if not found

@@ -21,7 +21,7 @@ const client = new ApolloClient({
     // set context based on if the token is avaialbe in localStorage - yes: authorized, no: empty
     operation.setContext({
       headers: {
-        authorization: token ? `Bearer ${token}` : "",
+        authorization: token?`Bearer ${token}`:'',
       },
     });
   },

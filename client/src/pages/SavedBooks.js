@@ -23,9 +23,6 @@ import { removeBookId } from "../utils/localStorage";
 // import auth util
 import Auth from "../utils/auth";
 
-// import removeBookId
-import { removeBookId } from "../utils/localStorage";
-
 const SavedBooks = () => {
   // delclare new data object and fill it with user info returned from QUERY_ME
   const { loading, data } = useQuery(QUERY_ME);

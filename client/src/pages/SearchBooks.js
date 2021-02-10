@@ -51,10 +51,10 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await searchGoogleBooks(searchInput);
+      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`);
 
       if (!response.ok) {
-        throw new Error("something went wrong!");
+        throw new error('something went wrong!');
       }
 
       const { items } = await response.json();
